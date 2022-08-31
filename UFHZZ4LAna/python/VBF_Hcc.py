@@ -43,7 +43,7 @@ process.source = cms.Source("PoolSource",fileNames = myfilelist,
                             )
 
 process.TFileService = cms.Service("TFileService",
-                                   fileName = cms.string("DUMMYFILENAME_2018_L2_old.root")
+                                   fileName = cms.string("VBFHToCC_UL18.root")
 )
 
 # clean muons by segments 
@@ -347,6 +347,9 @@ process.Ana = cms.EDAnalyzer('UFHZZ4LAna',
                               tauSrc      = cms.untracked.InputTag("slimmedTaus"),
                               jetSrc       = cms.untracked.InputTag("slimmedJetsJEC"),
 #                              jetSrc       = cms.untracked.InputTag("slimmedJets"),
+															bxvCaloJetSrc =  cms.InputTag("caloStage2Digis","Jet"),
+                              bxvCaloMuonSrc =  cms.InputTag("gmtStage2Digis","Muon"),
+                              bxvCaloHTSrc =  cms.InputTag("caloStage2Digis","EtSum"),
                               mergedjetSrc = cms.untracked.InputTag("corrJets"),
                               metSrc       = cms.untracked.InputTag("slimmedMETs","","UFHZZ4LAnalysis"),
 #                              metSrc       = cms.untracked.InputTag("slimmedMETs","","hcc_v2"),
